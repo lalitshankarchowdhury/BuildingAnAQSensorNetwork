@@ -1,2 +1,2 @@
 # BuildingAnAQSensorNetwork
-Code files for UGRP: Building an Air Quality Sensor Network under Dr. Aditya Vaishya.
+Code files for Undergraduate Research Program: Building an Air Quality Sensor Network under Dr. Aditya Vaishya.
