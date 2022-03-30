@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #! /usr/bin/python3
 
 import bme680
@@ -27,7 +28,7 @@ csv_file_name = input(
 )
 
 # Open CSV file
-with open(csv_file_name, "w") as csvfile:
+with open(csv_file_name, "w", encoding="utf-8") as csvfile:
     # Initialize CSV writer
     csv_writer = csv.writer(
         csvfile, delimiter=",", quotechar='"', quoting=csv.QUOTE_MINIMAL
@@ -43,9 +44,7 @@ with open(csv_file_name, "w") as csvfile:
         ]
     )
 
-    running_time = int(
-        input("Enter number of readings to take (Time = ~ 1s/reading): ")
-    )
+    running_time = int(input("Enter number of readings to take (Time = ~1s/reading): "))
     cnt = 0
 
     while cnt < running_time:
