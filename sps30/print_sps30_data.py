@@ -17,15 +17,25 @@ sensor.device_reset()
 sensor.start_measurement()
 
 while True:
-    print("PM1.0 Value in µg/m3: " + str(sensor.dict_values["pm1p0"]))
-    print("PM2.5 Value in µg/m3: " + str(sensor.dict_values["pm2p5"]))
-    print("PM4.0 Value in µg/m3: " + str(sensor.dict_values["pm4p0"]))
-    print("PM10.0 Value in µg/m3: " + str(sensor.dict_values["pm10p0"]))
-    print("NC0.5 Value in 1/cm3: " + str(sensor.dict_values["nc0p5"]))
-    print("NC1.0 Value in 1/cm3: " + str(sensor.dict_values["nc1p0"]))
-    print("NC2.5 Value in 1/cm3: " + str(sensor.dict_values["nc2p5"]))
-    print("NC4.0 Value in 1/cm3: " + str(sensor.dict_values["nc4p0"]))
-    print("NC10.0 Value in 1/cm3: " + str(sensor.dict_values["nc10p0"]))
-    print("Typical Particle Size in µm: " + str(sensor.dict_values["typical"]))
+    try:
+        sensor.read_measured_values()
+
+        print("PM1.0 Value in µg/m3: " + str(sensor.dict_values["pm1p0"]))
+        print("PM2.5 Value in µg/m3: " + str(sensor.dict_values["pm2p5"]))
+        print("PM4.0 Value in µg/m3: " + str(sensor.dict_values["pm4p0"]))
+        print("PM10.0 Value in µg/m3: " + str(sensor.dict_values["pm10p0"]))
+        print("NC0.5 Value in 1/cm3: " + str(sensor.dict_values["nc0p5"]))
+        print("NC1.0 Value in 1/cm3: " + str(sensor.dict_values["nc1p0"]))
+        print("NC2.5 Value in 1/cm3: " + str(sensor.dict_values["nc2p5"]))
+        print("NC4.0 Value in 1/cm3: " + str(sensor.dict_values["nc4p0"]))
+        print("NC10.0 Value in 1/cm3: " + str(sensor.dict_values["nc10p0"]))
+        print("Typical Particle Size in µm: " + str(sensor.dict_values["typical"]))
+    # Read measured values
+    except KeyboardInterrupt:
+        # Stop measuring data
+        sensor.stop_measurement()
+
+        # Start manually cleaning fan
+        sensor.start_fan_cleaning()
 
     time.sleep(1)
