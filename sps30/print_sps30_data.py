@@ -40,10 +40,10 @@ try:
         try:
             sensor.read_measured_values()
 
-            print(f"PM1.0: {sensor.dict_values["pm1p0"]} µg/m3: ")
-            print(f"PM2.5: {sensor.dict_values["pm2p5"]} µg/m3: ")
-            print(f"PM4.0: {sensor.dict_values["pm4p0"]} µg/m3: ")
-            print(f"PM10.0: {sensor.dict_values["pm10p0"]} µg/m3: ")
+            print(f"PM1.0: {0} µg/m3: ", sensor.dict_values["pm1p0"])
+            print(f"PM2.5: {0} µg/m3: ", sensor.dict_values["pm2p5"])
+            print(f"PM4.0: {0} µg/m3: ", sensor.dict_values["pm4p0"])
+            print(f"PM10.0: {0} µg/m3: ", sensor.dict_values["pm10p0"])
             print("NC0.5 Value in 1/cm3: " + str(sensor.dict_values["nc0p5"]))
             print("NC1.0 Value in 1/cm3: " + str(sensor.dict_values["nc1p0"]))
             print("NC2.5 Value in 1/cm3: " + str(sensor.dict_values["nc2p5"]))
