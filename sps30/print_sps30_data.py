@@ -16,6 +16,12 @@ sensor.device_reset()
 # Start measuring data
 sensor.start_measurement()
 
+# Wait until reading is not ready
+while not sensor.read_data_ready_flag():
+    # If there is a problem in getting reading ready
+    if sensor.read_data_ready_flag() == sensor.DATA_READY_FLAG_ERROR:
+        raise Exception("DATA-READY FLAG CRC ERROR")
+
 while True:
     try:
         try:
