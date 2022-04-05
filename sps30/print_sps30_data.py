@@ -7,8 +7,8 @@ import time
 # Connect to sensor on I2C address 0x69
 sensor = sps30.SPS30(1)
 
-# # Set auto-cleaning interval to default value
-# sensor.set_auto_cleaning_interval(604800)
+# Set auto-cleaning interval to default value
+sensor.set_auto_cleaning_interval(604800)
 
 # # Reset sensor to check new auto-cleaning interval
 sensor.device_reset()
