@@ -8,13 +8,22 @@ import time
 sensor = sps30.SPS30(1)
 
 # Set auto-cleaning interval to default value
-sensor.set_auto_cleaning_interval(604800)
+try:
+    sensor.set_auto_cleaning_interval(604800)
+except:
+    pass
 
-# # Reset sensor to check new auto-cleaning interval
-sensor.device_reset()
+# Reset sensor to check new auto-cleaning interval
+try:
+    sensor.device_reset()
+except:
+    pass
 
 # Start measuring data
-sensor.start_measurement()
+try:
+    sensor.start_measurement()
+except:
+    pass
 
 # Wait until reading is not ready
 try:
@@ -22,6 +31,7 @@ try:
 except:
     pass
 
+# Run until keyboard interrupt
 try:
     while True:
         # Read measured values
@@ -42,7 +52,6 @@ try:
             pass
 
         time.sleep(1)
-# On keyboard interrupt
 except KeyboardInterrupt:
     # Stop measuring data
     sensor.stop_measurement()
