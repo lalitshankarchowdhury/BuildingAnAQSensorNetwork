@@ -22,8 +22,8 @@ try:
 except:
     pass
 
-while True:
-    try:
+try:
+    while True:
         # Read measured values
         try:
             sensor.read_measured_values()
@@ -40,12 +40,12 @@ while True:
             print("Typical Particle Size in µm: " + str(sensor.dict_values["typical"]))
         except:
             pass
-    # On keyboard interrupt
-    except KeyboardInterrupt:
-        # Stop measuring data
-        sensor.stop_measurement()
 
-        # Start manually cleaning fan
-        sensor.start_fan_cleaning()
+        time.sleep(1)
+# On keyboard interrupt
+except KeyboardInterrupt:
+    # Stop measuring data
+    sensor.stop_measurement()
 
-    time.sleep(1)
+    # Start manually cleaning fan
+    sensor.start_fan_cleaning()
