@@ -17,7 +17,10 @@ sensor.device_reset()
 sensor.start_measurement()
 
 # Wait until reading is not ready
-sensor.read_data_ready_flag()
+try:
+    sensor.read_data_ready_flag()
+except:
+    pass
 
 while True:
     try:
