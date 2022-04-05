@@ -40,15 +40,16 @@ try:
         try:
             sensor.read_measured_values()
 
+            print(f"PM0.05: {sensor.dict_values['pm0p5']} µg/m3: ", end="")
             print(f"PM1.0: {sensor.dict_values['pm1p0']} µg/m3: ", end="")
-            print(f"PM2.5: {sensor.dict_values['pm1p0']} µg/m3: ", end="")
-            print(f"PM4.0: {sensor.dict_values['pm1p0']} µg/m3: ", end="")
-            print(f"PM10.0: {sensor.dict_values['pm1p0']} µg/m3: ", end="")
-            print(f"NC0.5: {sensor.dict_values['nc0p5']} 1/cm3: ", end="")
-            print(f"NC1.0: {sensor.dict_values['nc1p0']} 1/cm3: ", end="")
-            print(f"NC2.5: {sensor.dict_values['nc2p5']} 1/cm3: ", end="")
-            print(f"NC4.0: {sensor.dict_values['nc4p0']} 1/cm3: ", end="")
-            print(f"NC10.0: {sensor.dict_values['nc10p0']} 1/cm3: ", end="")
+            print(f"PM2.5: {sensor.dict_values['pm2p5']} µg/m3: ", end="")
+            print(f"PM4.0: {sensor.dict_values['pm4p0']} µg/m3: ", end="")
+            print(f"PM10.0: {sensor.dict_values['pm10p0']} µg/m3: ", end="")
+            print(f"NC0.5: {sensor.dict_values['nc0p5']}/cm3: ", end="")
+            print(f"NC1.0: {sensor.dict_values['nc1p0']}/cm3: ", end="")
+            print(f"NC2.5: {sensor.dict_values['nc2p5']}/cm3: ", end="")
+            print(f"NC4.0: {sensor.dict_values['nc4p0']}/cm3: ", end="")
+            print(f"NC10.0: {sensor.dict_values['nc10p0']}/cm3: ", end="")
             print(f"Typical Particle Size: {sensor.dict_values['typical']} µm")
         except:
             pass
