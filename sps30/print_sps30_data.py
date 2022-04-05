@@ -11,7 +11,7 @@ sensor = sps30.SPS30(1)
 # sensor.set_auto_cleaning_interval(604800)
 
 # # Reset sensor to check new auto-cleaning interval
-# sensor.device_reset()
+sensor.device_reset()
 
 # Start measuring data
 sensor.start_measurement()
