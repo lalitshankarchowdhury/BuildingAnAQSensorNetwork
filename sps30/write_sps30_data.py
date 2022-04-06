@@ -48,14 +48,14 @@ with open(csv_file_name, "w", encoding="utf-8") as csvfile:
     # Write CSV dataset header row
     csv_writer.writerow(
         [
-            "PM1.0 in µg/m3",
-            "PM2.5 in µg/m3",
-            "PM4.0 in µg/m3",
-            "PM10.0 in µg/m3",
-            "NC1.0 in particles/cm3",
-            "NC2.5 in particles/cm3",
-            "NC4.0 in particles/cm3",
-            "NC10.0 in particles/cm3",
+            "PM1.0 in µg/m³",
+            "PM2.5 in µg/m³",
+            "PM4.0 in µg/m³",
+            "PM10.0 in µg/m³",
+            "NC1.0 in particles/cm³",
+            "NC2.5 in particles/cm³",
+            "NC4.0 in particles/cm³",
+            "NC10.0 in particles/cm³",
             "Typical Particle Size in µm",
         ]
     )
