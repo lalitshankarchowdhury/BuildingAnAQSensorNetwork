@@ -37,7 +37,7 @@ with open(csv_file_name, "w", encoding="utf-8") as csvfile:
     # Write CSV dataset header row
     csv_writer.writerow(
         [
-            "Temperate in °C",
+            "Temperature in °C",
             "Air pressure in hPa",
             "Relative humidity %",
             "VOC gas resistance (Ohms)",
