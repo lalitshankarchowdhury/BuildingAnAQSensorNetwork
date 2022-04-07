@@ -3,7 +3,6 @@
 
 import sps30
 import time
-import csv
 
 # Connect to sensor on I2C address 0x69
 sensor = sps30.SPS30(4)
@@ -26,9 +25,10 @@ try:
 except:
     pass
 
-# Wait until reading is not ready
+# Wait until sensor is ready to read data
 try:
-    sensor.read_data_ready_flag()
+    while not sensor.read_data_ready_flag():
+        time.sleep(0.25)
 except:
     pass
 
