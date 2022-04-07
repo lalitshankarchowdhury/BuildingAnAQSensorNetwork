@@ -3,6 +3,7 @@
 
 import sps30
 import time
+import csv
 
 # Connect to sensor on I2C address 0x69
 sensor = sps30.SPS30(4)
