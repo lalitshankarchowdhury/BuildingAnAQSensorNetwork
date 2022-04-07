@@ -5,7 +5,7 @@ import sps30
 import time
 
 # Connect to sensor on I2C address 0x69
-sensor = sps30.SPS30(1)
+sensor = sps30.SPS30(4)
 
 # Set auto-cleaning interval to default value
 try:
