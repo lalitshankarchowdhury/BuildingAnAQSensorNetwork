@@ -18,7 +18,7 @@ sensor.start_measurement()
 while sensor.read_data_ready_flag() != 1:
     sensor.device_reset()
     sensor.start_measurement()
-    time.sleep(0.1)
+    time.sleep(0.25)
 
 print("Polling data: ")
 
