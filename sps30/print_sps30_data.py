@@ -17,7 +17,7 @@ sensor.device_reset()
 sensor.start_measurement()
 
 # Wait until sensor is ready to read data
-while sensor.read_data_ready_flag() != -1:
+while sensor.read_data_ready_flag() != 1:
     sensor.device_reset()
 
 print("Polling data: ")
