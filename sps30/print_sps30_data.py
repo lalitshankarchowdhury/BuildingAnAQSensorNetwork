@@ -16,7 +16,7 @@ try:
         # Read measured values
         ret = sensor.read_measured_values()
         print(ret)
-        if ret:
+        if ret == 1:
             print(f"PM1.0: {sensor.dict_values['pm1p0']} µg/m³")
             print(f"PM2.5: {sensor.dict_values['pm2p5']} µg/m³")
             print(f"PM4.0: {sensor.dict_values['pm4p0']} µg/m³")
@@ -27,7 +27,7 @@ try:
             print(f"NC10.0: {sensor.dict_values['nc10p0']} particles/cm³")
             print(f"Typical Particle Size: {sensor.dict_values['typical']} µm")
 
-            time.sleep(1)
+            time.sleep(3)
         else:
             continue
 except KeyboardInterrupt:
