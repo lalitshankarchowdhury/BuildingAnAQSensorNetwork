@@ -6,34 +6,19 @@ import sps30, time
 sensor = sps30.SPS30(4)
 
 # Set auto-cleaning interval to default value
-try:
-    sensor.set_auto_cleaning_interval(604800)
-except:
-    pass
+sensor.set_auto_cleaning_interval(604800)
 
 # Reset sensor to check new auto-cleaning interval
-try:
-    sensor.device_reset()
-except:
-    pass
+sensor.device_reset()
 
 # Start measuring data
-try:
-    sensor.start_measurement()
-except:
-    pass
+sensor.start_measurement()
 
 # Wait until sensor is ready to read data
-try:
-    while sensor.read_data_ready_flag() != 1:
-        try:
-            sensor.device_reset()
-            sensor.start_measurement()
-            time.sleep(0.25)
-        except:
-            pass
-except:
-    pass
+while sensor.read_data_ready_flag() != 1:
+    sensor.device_reset()
+    sensor.start_measurement()
+    time.sleep(0.1)
 
 print("Polling data: ")
 
@@ -53,9 +38,10 @@ try:
             print(f"NC4.0: {sensor.dict_values['nc4p0']} particles/cm³")
             print(f"NC10.0: {sensor.dict_values['nc10p0']} particles/cm³")
             print(f"Typical Particle Size: {sensor.dict_values['typical']} µm")
+
+            time.sleep(1)
         except:
             pass
-        time.sleep(1)
 except KeyboardInterrupt:
     # Stop measuring data
     sensor.stop_measurement()
