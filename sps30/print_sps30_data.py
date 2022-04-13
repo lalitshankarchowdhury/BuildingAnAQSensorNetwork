@@ -27,7 +27,7 @@ except:
 
 # Wait until sensor is ready to read data
 try:
-    while not sensor.read_data_ready_flag():
+    while sensor.read_data_ready_flag() != 1:
         time.sleep(0.25)
 except:
     pass
