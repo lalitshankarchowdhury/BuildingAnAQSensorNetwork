@@ -18,6 +18,7 @@ sensor.start_measurement()
 
 # Wait until sensor is ready to read data
 while sensor.read_data_ready_flag() != 1:
+    time.sleep(0.25)
     continue
 
 print("Polling data: ")
