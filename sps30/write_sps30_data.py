@@ -1,9 +1,7 @@
 #! /usr/bin/python3
 # -*- coding: utf-8 -*-
 
-import sps30
-import time
-import csv
+import sps30, time, csv
 
 # Connect to sensor on I2C address 0x69
 sensor = sps30.SPS30(4)

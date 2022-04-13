@@ -1,8 +1,7 @@
 #! /usr/bin/python3
 # -*- coding: utf-8 -*-
 
-import bme680
-import time
+import bme680, time
 
 # Connect to sensor on I2c address 0x77 (0x76 is disabled as SD0 is not connected to GND using jumper wire)
 sensor = bme680.BME680(bme680.I2C_ADDR_SECONDARY)
