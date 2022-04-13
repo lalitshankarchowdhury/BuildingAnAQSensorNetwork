@@ -1,8 +1,7 @@
 #! /usr/bin/python3
 # -*- coding: utf-8 -*-
 
-import sps30
-import time
+import sps30, time
 
 # Connect to sensor on I2C address 0x69
 sensor = sps30.SPS30(4)
@@ -17,9 +16,9 @@ sensor.device_reset()
 sensor.start_measurement()
 
 # Wait until sensor is ready to read data
-while True:
-    print(sensor.read_data_ready_flag())
+while sensor.read_data_ready_flag():
     sensor.device_reset()
+    sensor.start_measurement()
 
 print("Polling data: ")
 
