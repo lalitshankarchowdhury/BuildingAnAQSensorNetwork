@@ -8,11 +8,6 @@ sensor = sps30.SPS30(4)
 # Start measuring data
 sensor.start_measurement()
 
-# Wait until sensor is ready to read data
-while sensor.read_data_ready_flag() != 1:
-    sensor.device_reset()
-    sensor.start_measurement()
-
 print("Polling data: ")
 
 # Run until keyboard interrupt
