@@ -8,55 +8,44 @@ import time
 sensor = sps30.SPS30(4)
 
 # Set auto-cleaning interval to default value
-try:
-    sensor.set_auto_cleaning_interval(604800)
-except:
-    pass
+sensor.set_auto_cleaning_interval(604800)
 
 # Reset sensor to check new auto-cleaning interval
-try:
-    sensor.device_reset()
-except:
-    pass
+sensor.device_reset()
 
 # Start measuring data
-try:
-    sensor.start_measurement()
-except:
-    pass
+sensor.start_measurement()
 
 # Wait until sensor is ready to read data
-try:
-    while sensor.read_data_ready_flag() != 1:
-        time.sleep(0.25)
-except:
-    pass
+while sensor.read_data_ready_flag() != 1:
+    time.sleep(0.25)
 
 print("Polling data: ")
 
 # Run until keyboard interrupt
-try:
-    while True:
-        # Read measured values
-        try:
-            sensor.read_measured_values()
+while True:
+    # Read measured values
+    try:
+        sensor.read_measured_values()
 
-            print(f"PM1.0: {sensor.dict_values['pm1p0']} µg/m³")
-            print(f"PM2.5: {sensor.dict_values['pm2p5']} µg/m³")
-            print(f"PM4.0: {sensor.dict_values['pm4p0']} µg/m³")
-            print(f"PM10.0: {sensor.dict_values['pm10p0']} µg/m³: ")
-            print(f"NC1.0: {sensor.dict_values['nc1p0']} particles/cm³")
-            print(f"NC2.5: {sensor.dict_values['nc2p5']} particles/cm³")
-            print(f"NC4.0: {sensor.dict_values['nc4p0']} particles/cm³")
-            print(f"NC10.0: {sensor.dict_values['nc10p0']} particles/cm³")
-            print(f"Typical Particle Size: {sensor.dict_values['typical']} µm")
+        print(f"PM1.0: {sensor.dict_values['pm1p0']} µg/m³")
+        print(f"PM2.5: {sensor.dict_values['pm2p5']} µg/m³")
+        print(f"PM4.0: {sensor.dict_values['pm4p0']} µg/m³")
+        print(f"PM10.0: {sensor.dict_values['pm10p0']} µg/m³: ")
+        print(f"NC1.0: {sensor.dict_values['nc1p0']} particles/cm³")
+        print(f"NC2.5: {sensor.dict_values['nc2p5']} particles/cm³")
+        print(f"NC4.0: {sensor.dict_values['nc4p0']} particles/cm³")
+        print(f"NC10.0: {sensor.dict_values['nc10p0']} particles/cm³")
+        print(f"Typical Particle Size: {sensor.dict_values['typical']} µm")
 
-            time.sleep(1)
-        except:
-            pass
-except KeyboardInterrupt:
-    # Stop measuring data
-    sensor.stop_measurement()
+        time.sleep(1)
+    except KeyboardInterrupt:
+        # Stop measuring data
+        sensor.stop_measurement()
 
-    # Start manually cleaning fan
-    sensor.start_fan_cleaning()
+        # Start manually cleaning fan
+        sensor.start_fan_cleaning()
+
+        break
+    except:
+        pass
