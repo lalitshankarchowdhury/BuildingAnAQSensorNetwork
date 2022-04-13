@@ -10,15 +10,14 @@ sensor = sps30.SPS30(4)
 # Set auto-cleaning interval to default value
 sensor.set_auto_cleaning_interval(604800)
 
-# Reset sensor to check new auto-cleaning interval
-sensor.device_reset()
-
-# Start measuring data
-sensor.start_measurement()
-
 # Wait until sensor is ready to read data
 while sensor.read_data_ready_flag() != 1:
-    time.sleep(0.25)
+    # Reset sensor to check new auto-cleaning interval
+    sensor.device_reset()
+
+    # Start measuring data
+    sensor.start_measurement()
+    time.sleep(0.1)
     continue
 
 print("Polling data: ")
