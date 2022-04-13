@@ -16,7 +16,7 @@ try:
         # Read measured values
         ret = sensor.read_measured_values()
         print(ret)
-        if ret:
+        if ret == 1:
             print(f"PM1.0: {sensor.dict_values['pm1p0']} µg/m³")
             print(f"PM2.5: {sensor.dict_values['pm2p5']} µg/m³")
             print(f"PM4.0: {sensor.dict_values['pm4p0']} µg/m³")
