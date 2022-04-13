@@ -14,7 +14,9 @@ print("Polling data: ")
 try:
     while True:
         # Read measured values
-        if sensor.read_measured_values() == 1:
+        ret = sensor.read_measured_values()
+        print(ret)
+        if ret:
             print(f"PM1.0: {sensor.dict_values['pm1p0']} µg/m³")
             print(f"PM2.5: {sensor.dict_values['pm2p5']} µg/m³")
             print(f"PM4.0: {sensor.dict_values['pm4p0']} µg/m³")
