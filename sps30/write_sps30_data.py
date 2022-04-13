@@ -1,10 +1,12 @@
 #! /usr/bin/python3
 # -*- coding: utf-8 -*-
 
-import sps30, time, csv
+import sps30
+import time
+import csv
 
 # Connect to sensor on I2C address 0x69
-sensor = sps30.SPS30(4)
+sensor = sps30.SPS30(1)
 
 # Set auto-cleaning interval to default value
 try:
@@ -24,10 +26,9 @@ try:
 except:
     pass
 
-# Wait until sensor is ready to read data
+# Wait until reading is not ready
 try:
-    while not sensor.read_data_ready_flag():
-        time.sleep(0.25)
+    sensor.read_data_ready_flag()
 except:
     pass
 
@@ -47,14 +48,14 @@ with open(csv_file_name, "w", encoding="utf-8") as csvfile:
     # Write CSV dataset header row
     csv_writer.writerow(
         [
-            "PM1.0 in µg/m³",
-            "PM2.5 in µg/m³",
-            "PM4.0 in µg/m³",
-            "PM10.0 in µg/m³",
-            "NC1.0 in particles/cm³",
-            "NC2.5 in particles/cm³",
-            "NC4.0 in particles/cm³",
-            "NC10.0 in particles/cm³",
+            "PM1.0 in µg/m3",
+            "PM2.5 in µg/m3",
+            "PM4.0 in µg/m3",
+            "PM10.0 in µg/m3",
+            "NC1.0 in particles/cm3",
+            "NC2.5 in particles/cm3",
+            "NC4.0 in particles/cm3",
+            "NC10.0 in particles/cm3",
             "Typical Particle Size in µm",
         ]
     )

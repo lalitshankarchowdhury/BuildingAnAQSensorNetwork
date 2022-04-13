@@ -1,54 +1,61 @@
-from sps30 import SPS30
-from time import sleep
+#! /usr/bin/python3
+# -*- coding: utf-8 -*-
 
-sps = SPS30(1)
+import sps30
+import time
 
-if sps.read_article_code() == sps.ARTICLE_CODE_ERROR:
-    raise Exception("ARTICLE CODE CRC ERROR!")
-else:
-    print("ARTICLE CODE: " + str(sps.read_article_code()))
+# Connect to sensor on I2C address 0x69
+sensor = sps30.SPS30(1)
 
-if sps.read_device_serial() == sps.SERIAL_NUMBER_ERROR:
-    raise Exception("SERIAL NUMBER CRC ERROR!")
-else:
-    print("DEVICE SERIAL: " + str(sps.read_device_serial()))
+# Set auto-cleaning interval to default value
+try:
+    sensor.set_auto_cleaning_interval(604800)
+except:
+    pass
 
-sps.set_auto_cleaning_interval(
-    seconds
-)  # default 604800, set 0 to disable auto-cleaning
+# Reset sensor to check new auto-cleaning interval
+try:
+    sensor.device_reset()
+except:
+    pass
 
-sps.device_reset()  # device has to be powered-down or reset to check new auto-cleaning interval
+# Start measuring data
+try:
+    sensor.start_measurement()
+except:
+    pass
 
-if (
-    sps.read_auto_cleaning_interval() == sps.AUTO_CLN_INTERVAL_ERROR
-):  # or returns the interval in seconds
-    raise Exception("AUTO-CLEANING INTERVAL CRC ERROR!")
-else:
-    print("AUTO-CLEANING INTERVAL: " + str(sps.read_auto_cleaning_interval()))
+# Wait until reading is not ready
+try:
+    sensor.read_data_ready_flag()
+except:
+    pass
 
-sps.start_measurement()
+print("Polling data: ")
 
-while not sps.read_data_ready_flag():
-    sleep(0.25)
-    if sps.read_data_ready_flag() == sps.DATA_READY_FLAG_ERROR:
-        raise Exception("DATA-READY FLAG CRC ERROR!")
+# Run until keyboard interrupt
+try:
+    while True:
+        # Read measured values
+        try:
+            sensor.read_measured_values()
 
-if sps.read_measured_values() == sps.MEASURED_VALUES_ERROR:
-    raise Exception("MEASURED VALUES CRC ERROR!")
-else:
-    print("PM1.0 Value in µg/m3: " + str(sps.dict_values["pm1p0"]))
-    print("PM2.5 Value in µg/m3: " + str(sps.dict_values["pm2p5"]))
-    print("PM4.0 Value in µg/m3: " + str(sps.dict_values["pm4p0"]))
-    print("PM10.0 Value in µg/m3: " + str(sps.dict_values["pm10p0"]))
-    print(
-        "NC0.5 Value in 1/cm3: " + str(sps.dict_values["nc0p5"])
-    )  # NC: Number of Concentration
-    print("NC1.0 Value in 1/cm3: " + str(sps.dict_values["nc1p0"]))
-    print("NC2.5 Value in 1/cm3: " + str(sps.dict_values["nc2p5"]))
-    print("NC4.0 Value in 1/cm3: " + str(sps.dict_values["nc4p0"]))
-    print("NC10.0 Value in 1/cm3: " + str(sps.dict_values["nc10p0"]))
-    print("Typical Particle Size in µm: " + str(sps.dict_values["typical"]))
+            print(f"PM1.0: {sensor.dict_values['pm1p0']} µg/m3")
+            print(f"PM2.5: {sensor.dict_values['pm2p5']} µg/m3")
+            print(f"PM4.0: {sensor.dict_values['pm4p0']} µg/m3")
+            print(f"PM10.0: {sensor.dict_values['pm10p0']} µg/m3: ")
+            print(f"NC1.0: {sensor.dict_values['nc1p0']} particles/cm3")
+            print(f"NC2.5: {sensor.dict_values['nc2p5']} particles/cm3")
+            print(f"NC4.0: {sensor.dict_values['nc4p0']} particles/cm3")
+            print(f"NC10.0: {sensor.dict_values['nc10p0']} particles/cm3")
+            print(f"Typical Particle Size: {sensor.dict_values['typical']} µm")
+        except:
+            pass
 
-sps.stop_measurement()
+        time.sleep(1)
+except KeyboardInterrupt:
+    # Stop measuring data
+    sensor.stop_measurement()
 
-sps.start_fan_cleaning()  # enables fan-cleaning manually for 10 seconds (referred by datasheet)
+    # Start manually cleaning fan
+    sensor.start_fan_cleaning()
