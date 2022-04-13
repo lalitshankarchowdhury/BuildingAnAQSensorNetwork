@@ -50,10 +50,10 @@ try:
             print(f"NC4.0: {sensor.dict_values['nc4p0']} particles/cm³")
             print(f"NC10.0: {sensor.dict_values['nc10p0']} particles/cm³")
             print(f"Typical Particle Size: {sensor.dict_values['typical']} µm")
+
+            time.sleep(1)
         except:
             pass
-
-        time.sleep(1)
 except KeyboardInterrupt:
     # Stop measuring data
     sensor.stop_measurement()
