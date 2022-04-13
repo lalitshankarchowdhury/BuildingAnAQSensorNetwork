@@ -18,7 +18,7 @@ sensor.start_measurement()
 
 # Wait until sensor is ready to read data
 while sensor.read_data_ready_flag() != 1:
-    pass
+    continue
 
 print("Polling data: ")
 
@@ -40,12 +40,12 @@ while True:
 
         time.sleep(1)
     except KeyboardInterrupt:
-        # Stop measuring data
-        sensor.stop_measurement()
-
-        # Start manually cleaning fan
-        sensor.start_fan_cleaning()
-
         break
     except:
-        pass
+        continue
+
+# Stop measuring data
+sensor.stop_measurement()
+
+# Start manually cleaning fan
+sensor.start_fan_cleaning()
