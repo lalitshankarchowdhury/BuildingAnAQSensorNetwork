@@ -1,5 +1,11 @@
 #!/bin/bash
 
+echo 'Deactivate Python virtual environment (if already present)'
+if [[ "$VIRTUAL_ENV" != "" ]]
+then
+  deactivate
+fi
+
 echo 'Initialize Python virtual environment'
 python -m venv .venv
 
