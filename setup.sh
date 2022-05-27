@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo 'Clean up old folders (if already present)'
+rm -rf bme68x-python-library/
+rm -rf bme68x.egg-info/
+
 echo 'Deactivate Python virtual environment (if already present)'
 if [[ "$VIRTUAL_ENV" != "" ]]
 then
