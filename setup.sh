@@ -18,3 +18,7 @@ cd bme68x-python-library/
 ../.venv/bin/python3 setup.py install
 cd ..
 pip install -r requirements.txt
+
+echo 'Clean up'
+rm -rf bme68x-python-library/
+rm -rf bme68x.egg-info/
