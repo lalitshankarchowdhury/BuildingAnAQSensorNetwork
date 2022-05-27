@@ -3,4 +3,4 @@ Code files for Undergraduate Research Program: Building an Air Quality Sensor Ne
 
 ## Instructions
 
-Clone repository and run `$ source ./setup.sh` to setup development environment.
+Clone repository and run `$ source setup.sh` to setup development environment.
