@@ -1,2 +1,4 @@
 .vscode/
 .venv/
+bme68x-python-library/
+bme68x.egg-info/
