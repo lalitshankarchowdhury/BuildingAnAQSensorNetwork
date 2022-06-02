@@ -1,6 +1,4 @@
 import sqlite3
-import pandas as pd
-
 
 conn = sqlite3.connect('db-rp1') 
 c = conn.cursor()
@@ -16,7 +14,7 @@ c.execute('''
 conn.commit()
 
 
-conn = sqlite3.connect('test_database') 
+conn = sqlite3.connect('db-rp1') 
 c = conn.cursor()
                    
 for row in c.execute('''
