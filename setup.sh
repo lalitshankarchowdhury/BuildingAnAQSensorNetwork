@@ -26,3 +26,6 @@ pip install -r requirements.txt
 echo 'Clean up'
 rm -rf bme68x-python-library/
 rm -rf bme68x.egg-info/
+
+echo 'Creating Database'
+python db-setup.py
