@@ -39,39 +39,26 @@ except:
 print("Polling data: ")
 
 # Run until keyboard interrupt
-try:
-    while True:
-        # Read measured values
-        try:
-            sensor.read_measured_values()
 
-            mydict = sensor.dict_values
+while True:
+    # Read measured values
+    try:
+        sensor.read_measured_values()
 
-            columns = ", ".join(
-                "'" + str(x).replace("/", "_") + "'" for x in mydict.keys()
-            )
+        mydict = sensor.dict_values
 
-            values = ", ".join(str(x).replace("/", "_") for x in mydict.values())
+        columns = ", ".join("'" + str(x).replace("/", "_") + "'" for x in mydict.keys())
 
-            sql = "INSERT INTO %s ( %s ) VALUES ( %s );" % ("sps30", columns, values)
+        values = ", ".join(str(x).replace("/", "_") for x in mydict.values())
 
-            print(sql)
+        sql = "INSERT INTO %s ( %s ) VALUES ( %s );" % ("sps30", columns, values)
 
-            c.execute(sql)
+        print(sql)
 
-            conn.commit()
+        c.execute(sql)
 
-            time.sleep(60)
-        except:
-            pass
+        conn.commit()
 
-
-except KeyboardInterrupt:
-    # Stop measuring data
-    sensor.stop_measurement()
-
-    # Start manually cleaning fan
-    sensor.start_fan_cleaning()
-
-    # Commit data to database
-    conn.commit()
+        time.sleep(60)
+    except:
+        pass

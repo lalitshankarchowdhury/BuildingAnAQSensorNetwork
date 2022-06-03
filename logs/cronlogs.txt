@@ -59,3 +59,18 @@ error: Your local changes to the following files would be overwritten by merge:
 Please commit your changes or stash them before you merge.
 Aborting
 Updating f18db62..7aac7ef
+[main 492ef37] Update: 2022-06-03 @ 17:44:02
+ 7 files changed, 23 insertions(+), 5 deletions(-)
+ create mode 100644 bme680/bme680.db
+ rewrite sps30/sps30.db (100%)
+To https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+From https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork
+ * branch            main       -> FETCH_HEAD
+CONFLICT (modify/delete): sps30/sps30.db deleted in 7aac7ef406938b3fe7c4bde0a5394208b2656ab4 and modified in HEAD. Version HEAD of sps30/sps30.db left in tree.
+Automatic merge failed; fix conflicts and then commit the result.
