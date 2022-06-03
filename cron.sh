@@ -9,7 +9,7 @@ timestamp() {
 # Go to the repo 
 cd /home/pi/BuildingAnAQSensorNetwork
 
-echo "job started: $(timestamp)" >> log.txt
+echo "Job started: $(timestamp)" >> log.txt
 
 # pull & push
 if [[ `git status --porcelain` ]]; then
@@ -19,7 +19,7 @@ if [[ `git status --porcelain` ]]; then
   git commit -m "Update: $(timestamp)"
   git push origin main
   echo "Finished running Git commands: $(timestamp)" >> log.txt
-  echo "-------------------------------------------" >> log.txt
 fi
 
-echo "job done: $(timestamp)" >> log.txt
+echo "Job done: $(timestamp)" >> log.txt
+echo "-------------------------------------------" >> log.txt
