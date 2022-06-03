@@ -61,7 +61,7 @@ try:
         except:
             pass
 
-        time.sleep(1)
+        time.sleep(60)
 
         conn.commit()
 

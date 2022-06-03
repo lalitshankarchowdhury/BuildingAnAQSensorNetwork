@@ -17,7 +17,7 @@ bme680_sensor.set_heatr_conf(BME68X_FORCED_MODE, 320, 100, BME68X_ENABLE)
 
 try:
     while True:
-        sleep(1)
+        sleep(60)
 
         mydict = bme680_sensor.get_data()
 
