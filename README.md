@@ -8,7 +8,7 @@ Clone repository and run `$ source setup.sh` to setup development environment.
 
 ## Results
 
-### SPS30
+### BME680
 {'sample_nr': 1, 'timestamp': 4062576, 'raw_temperature': 29.807947158813477, 'raw_pressure': 993.4461059570312, 'raw_humidity': 37.93738555908203, 'raw_gas': 2397.1376953125, 'status': 160}
 {'sample_nr': 2, 'timestamp': 4063781, 'raw_temperature': 29.808574676513672, 'raw_pressure': 993.4453125, 'raw_humidity': 37.896331787109375, 'raw_gas': 46.52265930175781, 'status': 176}
 {'sample_nr': 3, 'timestamp': 4064986, 'raw_temperature': 29.80951499938965, 'raw_pressure': 993.4452514648438, 'raw_humidity': 37.83770751953125, 'raw_gas': 55.124794006347656, 'status': 176}
@@ -17,8 +17,7 @@ Clone repository and run `$ source setup.sh` to setup development environment.
 {'sample_nr': 6, 'timestamp': 4068606, 'raw_temperature': 29.8135986328125, 'raw_pressure': 993.4463500976562, 'raw_humidity': 37.55068588256836, 'raw_gas': 125.28048706054688, 'status': 176}
 {'sample_nr': 7, 'timestamp': 4069811, 'raw_temperature': 29.815481185913086, 'raw_pressure': 993.4459228515625, 'raw_humidity': 37.47471618652344, 'raw_gas': 145.27320861816406, 'status': 176}
 
-### BME680
-
+### SPS30
 Polling data: 
 {'pm1p0': 9.40277099609375, 'pm2p5': 12.014436721801758, 'pm4p0': 13.747060775756836, 'pm10p0': 14.659709930419922, 'nc0p5': 58.250694274902344, 'nc1p0': 71.34091186523438, 'nc2p5': 73.86448669433594, 'nc4p0': 74.30712890625, 'nc10p0': 74.41680145263672, 'typical': 0.6754058599472046}
 {'pm1p0': 5.255046367645264, 'pm2p5': 10.539371490478516, 'pm4p0': 14.584619522094727, 'pm10p0': 16.71546173095703, 'nc0p5': 22.73638153076172, 'nc1p0': 35.775390625, 'nc2p5': 41.28406524658203, 'nc4p0': 42.282203674316406, 'nc10p0': 42.509342193603516, 'typical': 0.7761850357055664}

@@ -6,13 +6,13 @@ import time
 import sqlite3
 
 # Setup connection to the database
-conn = sqlite3.connect('db-rp1') 
+conn = sqlite3.connect("sps30.db")
 c = conn.cursor()
 
 # Connect to sensor on I2C address 0x69
 sensor = sps30.SPS30(1)
 
-# Set auto-cleaning interval to default value
+# Set auto-cleaning interval to default value (once every week)
 try:
     sensor.set_auto_cleaning_interval(604800)
 except:
@@ -30,7 +30,7 @@ try:
 except:
     pass
 
-# Wait until reading is not ready
+# Wait until reading is ready
 try:
     sensor.read_data_ready_flag()
 except:
@@ -45,21 +45,32 @@ try:
         try:
             sensor.read_measured_values()
 
-            print(sensor.dict_values)
             mydict = sensor.dict_values
-            columns = ', '.join("'" + str(x).replace('/', '_') + "'" for x in mydict.keys())
-            values = ', '.join("'" + str(x).replace('/', '_') + "'" for x in mydict.values())
-            sql = "INSERT INTO %s ( %s ) VALUES ( %s );" % ('sps30', columns, values)
-            # print(sql) 
+
+            columns = ", ".join(
+                "'" + str(x).replace("/", "_") + "'" for x in mydict.keys()
+            )
+
+            values = ", ".join(str(x).replace("/", "_") for x in mydict.values())
+
+            sql = "INSERT INTO %s ( %s ) VALUES ( %s );" % ("sps30", columns, values)
+
+            print(sql)
+
+            c.execute(sql)
         except:
             pass
 
         time.sleep(1)
-        c.execute(sql, mydict.values())
-        
+
+        conn.commit()
+
 except KeyboardInterrupt:
     # Stop measuring data
     sensor.stop_measurement()
 
     # Start manually cleaning fan
     sensor.start_fan_cleaning()
+
+    # Commit data to database
+    conn.commit()
