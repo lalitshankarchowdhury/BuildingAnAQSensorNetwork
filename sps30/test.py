@@ -38,8 +38,6 @@ except:
 
 print("Polling data: ")
 
-# Run until keyboard interrupt
-
 while True:
     # Read measured values
     try:
@@ -58,7 +56,7 @@ while True:
         c.execute(sql)
 
         conn.commit()
-
-        time.sleep(60)
     except:
         pass
+
+    time.sleep(60)
