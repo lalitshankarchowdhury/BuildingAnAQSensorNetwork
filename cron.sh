@@ -17,7 +17,7 @@ if [[ `git status --porcelain` ]]; then
   git pull origin main
   git add .
   git commit -m "Update: $(timestamp)"
-  git push origin main
+  git push
   echo "Finished running Git commands: $(timestamp)" >> log.txt
 fi
 
