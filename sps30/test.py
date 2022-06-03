@@ -55,6 +55,7 @@ try:
             pass
 
         time.sleep(1)
+
 except KeyboardInterrupt:
     # Stop measuring data
     sensor.stop_measurement()
