@@ -2,7 +2,8 @@ import sqlite3
 
 conn = sqlite3.connect('db-rp1') 
 c = conn.cursor()
-                   
+
+# Query for Inserting   
 c.execute('''
           INSERT INTO bme680 (sample_nr, time, raw_temperature, raw_pressure, raw_humidity, raw_gas, status)
 
