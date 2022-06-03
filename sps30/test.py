@@ -32,7 +32,8 @@ except:
 
 # Wait until reading is ready
 try:
-    sensor.read_data_ready_flag()
+    while sensor.read_data_ready_flag() != 1:
+        continue
 except:
     pass
 
@@ -56,7 +57,7 @@ while True:
         c.execute(sql)
 
         conn.commit()
-    except:
-        pass
 
-    time.sleep(60)
+        time.sleep(60)
+    except:
+        continue
