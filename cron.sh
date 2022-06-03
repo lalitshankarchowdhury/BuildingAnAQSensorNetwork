@@ -1,0 +1,25 @@
+#!/bin/bash
+
+
+# create a timestamp alias for the commit message
+timestamp() {
+  date +"%Y-%m-%d @ %T"
+}
+
+# Go to the repo 
+cd /home/pi/BuildingAnAQSensorNetwork
+
+echo "job started: $(timestamp)" >> log.txt
+
+# pull & push
+if [[ `git status --porcelain` ]]; then
+  echo "Running Git commands: $(timestamp)" >> log.txt
+  git pull origin main
+  git add .
+  git commit -m "Update: $(timestamp)"
+  git push origin main
+  echo "Finished running Git commands: $(timestamp)" >> log.txt
+  echo "-------------------------------------------" >> log.txt
+fi
+
+echo "job done: $(timestamp)" >> log.txt
