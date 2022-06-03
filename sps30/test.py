@@ -41,6 +41,10 @@ try:
             sensor.read_measured_values()
 
             print(sensor.dict_values)
+            columns = ', '.join("`" + str(x).replace('/', '_') + "`" for x in mydict.keys())
+            values = ', '.join("'" + str(x).replace('/', '_') + "'" for x in mydict.values())
+            sql = "INSERT INTO %s ( %s ) VALUES ( %s );" % ('mytable', columns, values)
+            print(sql) 
         except:
             pass
 
