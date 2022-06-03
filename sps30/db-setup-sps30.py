@@ -17,6 +17,7 @@ def create_connection(db_file):
         c.execute(
             """CREATE TABLE IF NOT EXISTS sps30 (
                 [serial] INTEGER PRIMARY KEY AUTOINCREMENT,
+                [actual_time] REAL DEFAULT (datetime('now','localtime')),
                 [pm1p0] REAL NOT NULL,
                 [pm2p5] REAL NOT NULL,
                 [pm4p0] REAL NOT NULL,
