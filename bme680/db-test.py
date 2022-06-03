@@ -8,7 +8,6 @@ for row in c.execute("""SELECT * FROM bme680"""):
 
 conn.close()
 
-
 # conn = sqlite3.connect("db-rp1")
 # c = conn.cursor()
 
