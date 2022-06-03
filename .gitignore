@@ -1,3 +1,4 @@
 .vscode/
 .venv/
 bme680/bme680.db
+sps30/sps30.db
