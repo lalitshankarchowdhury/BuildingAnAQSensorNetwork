@@ -27,7 +27,6 @@ def create_connection(db_file):
                 [raw_gas] REAL,
                 [status] REAL)"""
         )
-
         conn.commit()
     except Error as e:
         print(e)
