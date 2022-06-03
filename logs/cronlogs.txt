@@ -95,3 +95,12 @@ To https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork
 From https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork
  * branch            main       -> FETCH_HEAD
 Already up to date.
+[main f11f17a] Update: 2022-06-03 @ 18:23:31
+ 6 files changed, 13 insertions(+)
+ create mode 100644 bme680.db
+ create mode 100644 sps30.db
+To https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork
+   480d260..f11f17a  main -> main
+From https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork
+ * branch            main       -> FETCH_HEAD
+Already up to date.
