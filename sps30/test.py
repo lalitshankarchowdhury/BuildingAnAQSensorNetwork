@@ -55,6 +55,8 @@ try:
             pass
 
         time.sleep(1)
+        c.execute(sql, mydict.values())
+        
 except KeyboardInterrupt:
     # Stop measuring data
     sensor.stop_measurement()
