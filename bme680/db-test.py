@@ -1,3 +1,6 @@
+#! ../.venv/bin/python3
+# -*- coding: utf-8 -*-
+
 import sqlite3
 
 conn = sqlite3.connect("bme680.db")
