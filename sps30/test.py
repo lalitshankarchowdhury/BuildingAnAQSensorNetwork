@@ -58,12 +58,13 @@ try:
             print(sql)
 
             c.execute(sql)
+
+            conn.commit()
+
+            time.sleep(60)
         except:
             pass
 
-        time.sleep(60)
-
-        conn.commit()
 
 except KeyboardInterrupt:
     # Stop measuring data

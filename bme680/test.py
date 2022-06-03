@@ -17,8 +17,6 @@ bme680_sensor.set_heatr_conf(BME68X_FORCED_MODE, 320, 100, BME68X_ENABLE)
 
 try:
     while True:
-        sleep(60)
-
         mydict = bme680_sensor.get_data()
 
         columns = ", ".join("'" + str(x).replace("/", "_") + "'" for x in mydict.keys())
@@ -32,6 +30,8 @@ try:
         c.execute(sql)
 
         conn.commit()
+
+        sleep(60)
 except:
     # Commit data to database
     conn.commit()

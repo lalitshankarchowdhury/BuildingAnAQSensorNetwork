@@ -47,3 +47,15 @@ Updating 50447de..afdde22
 Fast-forward
  .gitignore | 1 +
  1 file changed, 1 insertion(+)
+[main f18db62] Update: 2022-06-03 @ 17:33:02
+ 3 files changed, 9 insertions(+)
+ create mode 100644 log.txt
+To https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork
+   afdde22..f18db62  main -> main
+From https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork
+ * branch            main       -> FETCH_HEAD
+error: Your local changes to the following files would be overwritten by merge:
+	sps30/sps30.db
+Please commit your changes or stash them before you merge.
+Aborting
+Updating f18db62..7aac7ef
