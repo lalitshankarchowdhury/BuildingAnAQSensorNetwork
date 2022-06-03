@@ -17,7 +17,7 @@ if [[ `git status --porcelain` ]]; then
   git pull origin main
   git add .
   git commit -m "Update: $(timestamp)"
-  git push
+  git push https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork
   echo "Finished running Git commands: $(timestamp)" >> log.txt
 fi
 
