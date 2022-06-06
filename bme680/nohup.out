@@ -1,6 +1,0 @@
-pi3g_write: Remote I/O error
-initialize BME68X: Invalid argument
-Traceback (most recent call last):
-  File "/home/pi/BuildingAnAQSensorNetwork/bme680/test.py", line 12, in <module>
-    bme680_sensor = BME68X(BME68X_I2C_ADDR_HIGH, 0)
-SystemError: <class 'bme68x.BME68X'> returned NULL without setting an error
