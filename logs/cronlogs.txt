@@ -3056,3 +3056,15 @@ From https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork
  * branch            main       -> FETCH_HEAD
    ef546e1..7629ec3  main       -> origin/main
 Already up to date.
+[main 120cf98] Update: 2022-06-06 @ 09:00:02
+ 5 files changed, 13 insertions(+)
+To https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork
+   7629ec3..120cf98  main -> main
+From https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork
+ * branch            main       -> FETCH_HEAD
+   7629ec3..ad52880  main       -> origin/main
+Updating 120cf98..ad52880
+Fast-forward
+ bme680/nohup.out | 6 ------
+ 1 file changed, 6 deletions(-)
+ delete mode 100644 bme680/nohup.out
