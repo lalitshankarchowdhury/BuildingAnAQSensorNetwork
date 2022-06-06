@@ -9,10 +9,10 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    sps30_conn = sqlite3.connect("./sps30/sps30.db")
+    sps30_conn = sqlite3.connect("../sps30/sps30.db")
     sps30_curr = sps30_conn.cursor()
 
-    bme680_conn = sqlite3.connect("./bme680/bme680.db")
+    bme680_conn = sqlite3.connect("../bme680/bme680.db")
     bme680_curr = bme680_conn.cursor()
 
     sps30_row = sps30_curr.execute(
