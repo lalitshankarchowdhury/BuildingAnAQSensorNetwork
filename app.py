@@ -32,9 +32,10 @@ def index():
                     </title>
                     <style>
                     * {{
-                    font-family: monospace;
+                    font-size: large;
                     }}
                     table,th,td {{
+                    font-family: monospace;
                     border-width: 2px;
                     border-style: solid;
                     }}
@@ -52,7 +53,7 @@ def index():
                     <table>
                         <tr>
                             <th>Serial number</th>
-                            <th>Timestamp</th>
+                            <th>Actual timestamp</th>
                             <th>pm1p0</th>
                             <th>pm2p5</th>
                             <th>pm4p0</th>
@@ -77,6 +78,31 @@ def index():
                             <td>{sps30_row[9]}</td>
                             <td>{sps30_row[10]}</td>
                             <td>{sps30_row[11]}</td>
+                        </tr>
+                    </table>
+                    <h2>Bosch Sensortec BME680</h2>
+                    <table>
+                        <tr>
+                            <th>Serial number</th>
+                            <th>Actual timestamp</th>
+                            <th>Sample number</th>
+                            <th>Sensor timestamp</th>
+                            <th>Raw temperature</th>
+                            <th>Raw pressure</th>
+                            <th>Raw humidity</th>
+                            <th>Raw gas</th>
+                            <th>Status code</th>
+                        </tr>
+                        <tr>
+                            <td>{bme680_row[0]}</td>
+                            <td>{bme680_row[1]}</td>
+                            <td>{bme680_row[2]}</td>
+                            <td>{bme680_row[3]}</td>
+                            <td>{bme680_row[4]}</td>
+                            <td>{bme680_row[5]}</td>
+                            <td>{bme680_row[6]}</td>
+                            <td>{bme680_row[7]}</td>
+                            <td>{bme680_row[8]}</td>
                         </tr>
                     </table>
                 </body>
