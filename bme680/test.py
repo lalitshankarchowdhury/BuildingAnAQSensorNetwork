@@ -31,7 +31,7 @@ try:
 
         conn.commit()
 
-        sleep(60)
+        sleep(5)
 except:
     # Commit data to database
     conn.commit()

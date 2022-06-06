@@ -44,7 +44,7 @@ def index():
                         function autoRefresh() {{
                                 window.location = window.location.href;
                             }}
-                        setInterval("autoRefresh()", 60000);
+                        setInterval("autoRefresh()", 5000);
                     </script>
                 </head>
                 <body>
