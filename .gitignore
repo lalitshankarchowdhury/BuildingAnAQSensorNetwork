@@ -2,3 +2,4 @@
 .venv/
 sps30/sps30.db-journal
 bme680/bme680.db-journal
+__pycache__/
