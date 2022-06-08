@@ -27299,3 +27299,7 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 fatal: unable to access 'https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork/': Could not resolve host: github.com
 fatal: unable to access 'https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork/': Could not resolve host: github.com
+[main 60698299] Update: 2022-06-08 @ 13:23:01
+ 5 files changed, 31 insertions(+)
+fatal: unable to access 'https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork/': Could not resolve host: github.com
+fatal: unable to access 'https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork/': Could not resolve host: github.com
