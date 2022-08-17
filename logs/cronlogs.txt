@@ -83455,3 +83455,21 @@ hint: invocation.
 From https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork
  * branch                main       -> FETCH_HEAD
 Already up to date.
+[main c9ca325fd] Update: 2022-08-17 @ 15:39:03
+ 3 files changed, 23 insertions(+)
+fatal: could not read Username for 'https://github.com': No such device or address
+hint: Pulling without specifying how to reconcile divergent branches is
+hint: discouraged. You can squelch this message by running one of the following
+hint: commands sometime before your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge (the default strategy)
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+From https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork
+ * branch                main       -> FETCH_HEAD
+Already up to date.
