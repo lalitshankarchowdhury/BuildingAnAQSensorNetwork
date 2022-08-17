@@ -83329,3 +83329,6 @@ hint: invocation.
 From https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork
  * branch                main       -> FETCH_HEAD
 Already up to date.
+[main 0592772e9] Update: 2022-08-17 @ 15:33:02
+ 3 files changed, 23 insertions(+)
+fatal: could not read Username for 'https://github.com': No such device or address
