@@ -83583,3 +83583,8 @@ hint: invocation.
 From https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork
  * branch                main       -> FETCH_HEAD
 Already up to date.
+[main 0c4d1b4e4] Update: 2022-08-17 @ 15:46:02
+ 5 files changed, 25 insertions(+)
+ delete mode 100644 bme680.db
+ delete mode 100644 sps30.db
+fatal: could not read Username for 'https://github.com': No such device or address

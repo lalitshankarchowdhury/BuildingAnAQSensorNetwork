@@ -36,4 +36,4 @@ def create_connection(db_file):
 
 
 if __name__ == "__main__":
-    create_connection("bme680.db")
+    create_connection("bme680/bme680.db")

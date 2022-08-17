@@ -39,4 +39,4 @@ def create_connection(db_file):
 
 
 if __name__ == "__main__":
-    create_connection("sps30.db")
+    create_connection("sps30/sps30.db")
