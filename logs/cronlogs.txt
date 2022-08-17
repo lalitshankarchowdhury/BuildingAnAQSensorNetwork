@@ -83365,3 +83365,57 @@ hint: invocation.
 From https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork
  * branch                main       -> FETCH_HEAD
 Already up to date.
+[main ad993bbd3] Update: 2022-08-17 @ 15:35:02
+ 3 files changed, 23 insertions(+)
+fatal: could not read Username for 'https://github.com': No such device or address
+hint: Pulling without specifying how to reconcile divergent branches is
+hint: discouraged. You can squelch this message by running one of the following
+hint: commands sometime before your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge (the default strategy)
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+From https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork
+ * branch                main       -> FETCH_HEAD
+   8c01f95e7..6005f81ba  main       -> origin/main
+Already up to date.
+error: 'bme68x-python-library/' does not have a commit checked out
+fatal: adding files failed
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   log.txt
+	modified:   logs/cronlogs.txt
+	modified:   logs/log.txt
+	modified:   setup.sh
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	bme68x-python-library/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+fatal: could not read Username for 'https://github.com': No such device or address
+hint: Pulling without specifying how to reconcile divergent branches is
+hint: discouraged. You can squelch this message by running one of the following
+hint: commands sometime before your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge (the default strategy)
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+From https://github.com/lalitshankarchowdhury/BuildingAnAQSensorNetwork
+ * branch                main       -> FETCH_HEAD
+Already up to date.
