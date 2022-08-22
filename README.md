@@ -1,5 +1,5 @@
 # BuildingAnAQSensorNetwork
-Code files for Undergraduate Research Program: Building an Air Quality Sensor Network under Dr. Aditya Vaishya.
+Code files for Undergraduate Research Program: **Building an Air Quality Sensor Network** under Dr. Aditya Vaishya.
 
 ![Circuit overview](photo.jpg)
 
