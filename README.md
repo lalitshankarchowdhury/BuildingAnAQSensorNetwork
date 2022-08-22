@@ -5,10 +5,10 @@ Code files for Undergraduate Research Program: Building an Air Quality Sensor Ne
 
 ## Instructions
 
-Clone repository and run `$ source setup.sh` to setup development environment.
+Clone repository and run `$ source setup.sh` to setup development environment. Run `main.py` to setup databases, sensor measurement and local web server.
 
 
-## Results
+## Sample results
 
 ### BME680
 {'sample_nr': 1, 'timestamp': 4062576, 'raw_temperature': 29.807947158813477, 'raw_pressure': 993.4461059570312, 'raw_humidity': 37.93738555908203, 'raw_gas': 2397.1376953125, 'status': 160}
